@@ -20,7 +20,18 @@ func main() {
 
 	tmpString := testPtr()
 	*tmpString = "沙沟"
+	// 可以看出res是深拷贝 并且nil不是一种类型
+	res := tmpString
 
+	tmpString = nil
+	if res == nil {
+		println("res 是空， nil")
+	} else {
+		println("res 是非空")
+	}
+
+	try := true
+	println("try: ", try)
 }
 
 // 定义一个函数，返回一个string类型的指针，go语言返回值写在参数列表后面
