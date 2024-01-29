@@ -1,0 +1,17 @@
+# command-line-arguments
+./10-内存逃逸.go:11:2: city escapes to heap:
+./10-内存逃逸.go:11:2:   flow: ptr = &city:
+./10-内存逃逸.go:11:2:     from &city (address-of) at ./10-内存逃逸.go:12:9
+./10-内存逃逸.go:11:2:     from ptr := &city (assign) at ./10-内存逃逸.go:12:6
+./10-内存逃逸.go:11:2:   flow: ~r0 = ptr:
+./10-内存逃逸.go:11:2:     from return ptr (return) at ./10-内存逃逸.go:13:2
+./10-内存逃逸.go:11:2: moved to heap: city
+./10-内存逃逸.go:7:14: "p1: " escapes to heap:
+./10-内存逃逸.go:7:14:   flow: {storage for ... argument} = &{storage for "p1: "}:
+./10-内存逃逸.go:7:14:     from "p1: " (spill) at ./10-内存逃逸.go:7:14
+./10-内存逃逸.go:7:14:     from ... argument (slice-literal-element) at ./10-内存逃逸.go:7:13
+./10-内存逃逸.go:7:14:   flow: {heap} = {storage for ... argument}:
+./10-内存逃逸.go:7:14:     from ... argument (spill) at ./10-内存逃逸.go:7:13
+./10-内存逃逸.go:7:14:     from fmt.Println(... argument...) (call parameter) at ./10-内存逃逸.go:7:13
+./10-内存逃逸.go:7:13: ... argument does not escape
+./10-内存逃逸.go:7:14: "p1: " escapes to heap
